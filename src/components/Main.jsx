@@ -2,7 +2,6 @@ import React from 'react'
 import ButtonList from './ButtonList';
 import VideoContainer from './VideoContainer';
 import { useSelector } from 'react-redux';
-import { Outlet } from 'react-router-dom';
 
 const Main = () => {
   const isMenuOpen = useSelector(state => state.app.isMenuOpen);

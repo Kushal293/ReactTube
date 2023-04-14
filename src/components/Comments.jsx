@@ -13,7 +13,7 @@ const Comments = ({videoId}) => {
     const getComments = async () => {
         const data = await fetch(COMMENTS_API.replace("uniqeId", videoId));
         const json = await data.json();
-      console.log(json);
+      // console.log(json);
       setComments(json?.items);
     }
   return (

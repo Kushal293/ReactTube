@@ -30,31 +30,31 @@ const Head = () => {
   const isAuth = useSelector(store => store.auth?.isAuth); 
   // const auth = getAuth();
 
-    useEffect(() => {
+  //   useEffect(() => {
     
-    const timer = setTimeout(() => {
-      if (searchCach[searchQuery]) {
-      setSearchSuggestion(searchCach[ searchQuery ]);
-    } else {
-      getSearchResult();
-    }
-    }, 200);
+  //   const timer = setTimeout(() => {
+  //     if (searchCach[searchQuery]) {
+  //     setSearchSuggestion(searchCach[ searchQuery ]);
+  //   } else {
+  //     getSearchResult();
+  //   }
+  //   }, 200);
 
-    return () => {
-      clearTimeout(timer);
-    }
-  }, [searchQuery]);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   }
+  // }, [searchQuery]);
 
-  const getSearchResult = async () => {
-    // const data = await fetch(YOUTUBE_SEARCHRESULT_API);
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-    const json = await data.json();
-    // console.log(json[ 1 ]);
-    setSearchSuggestion(json[ 1 ]);
-    dispatch(cachingSuggestion({
-      [ searchQuery ]: searchResult,
-    }))
-  }
+  // const getSearchResult = async () => {
+  //   // const data = await fetch(YOUTUBE_SEARCHRESULT_API);
+  //   const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+  //   const json = await data.json();
+  //   // console.log(json[ 1 ]);
+  //   setSearchSuggestion(json[ 1 ]);
+  //   dispatch(cachingSuggestion({
+  //     [ searchQuery ]: searchResult,
+  //   }))
+  // }
   const handleToggleMenu = () => {
     dispatch(toggleMenu());
   }

@@ -13,7 +13,7 @@ const RelatedVideos = ({ id }) => {
     const getRelatedVideos = async () => {
         const data = await fetch(YOUTUBE_RELATED_VIDEOS_API.replace("id", id));
         const json = await data.json();
-        console.log(json);
+        // console.log(json);
         setVideos(json.items);
     }
     return videos.length == 0 ? <ShimmerForRelatedVideos /> : (

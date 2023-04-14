@@ -12,7 +12,7 @@ const ChannelPage = ({channelId}) => {
     
     
     const getChannelInfo = async () => {
-        console.log(channelId);
+        // console.log(channelId);
         const data = await fetch(YOUTUBE_CHANNEL_INFO.replace("CHANNEL_ID", channelId));
         const json = await data.json();
         // console.log(json);
