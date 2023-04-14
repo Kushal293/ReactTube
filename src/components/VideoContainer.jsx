@@ -14,7 +14,7 @@ const VideoContainer = () => {
 
   useEffect(() => {
     getVideos();
-    console.log(videos);
+    // console.log(videos);
 }, [pageToken]);
 
   const getVideos = async () => {
@@ -45,7 +45,7 @@ const VideoContainer = () => {
 }
 
   return videos?.length === 0 ? (<Shimmer />) : (
-    <div className='mt-24 overflow-hidden'>
+    <div className='mt-28 overflow-hidden'>
       <div className={`grid grid-cols-1 w-screen overflow-hidden md:w-auto ${!isMenuOpen ? "md:grid-cols-2 lg:grid-cols-4 p-1 mt-6" : "md:grid-cols-2 lg:grid-cols-3 px-3 md:px-5 lg:px-10 py-2 mt-6 border]" }`}>
         { videos.map((video) => {
           return <Link to={"/watch?v=" + video.id}  key={ video?.etag }><VideoCard { ...video?.snippet } { ...video?.statistics } min={!isMenuOpen} /></Link>

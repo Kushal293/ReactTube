@@ -108,7 +108,7 @@ const Head = () => {
           <MicOutlinedIcon className='text-white cursor-pointer' style={ { fontSize: "22px" } } />
         </div>
       </div>
-        {
+        {/* {
           showSuggestions && searchSuggestion.length > 0 && <div className='md:w-[350px] lg:w-[560px] bg-white font-semibold border border-gray-200 shadow-sm shadow-gray-600 fixed top-14 rounded-xl pt-3 pb-2'>
           <ul>
             {
@@ -125,7 +125,7 @@ const Head = () => {
             }
           </ul>
         </div>
-      }
+      } */}
       </div>
       <div className='flex items-center justify-center gap-1 md:gap-4'>
         <div className='hover:bg-[#222222] rounded-full p-1 md:p-2 cursor-pointer hidden md:flex items-center justify-center'><VideoCallOutlinedIcon className='text-white' /></div>

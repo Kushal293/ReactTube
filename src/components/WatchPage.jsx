@@ -24,7 +24,7 @@ const WatchPage = () => {
         dispatch(closeMenu("close"));
         getVideoDetails();
     
-        console.log(searchParamas.get("v"));
+        // console.log(searchParamas.get("v"));
         
         return () => {
             dispatch(closeMenu(true));

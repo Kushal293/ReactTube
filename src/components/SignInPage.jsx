@@ -22,7 +22,7 @@ const SignInPage = () => {
 
     const signUp = async () => {
         try {
-            console.log(`Email: ${signUpEmail} Password: ${signUpPassword}`);
+            // console.log(`Email: ${signUpEmail} Password: ${signUpPassword}`);
             await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword);
             // dispatch(signIn(auth.currentUser));
             navigate("/")
@@ -34,7 +34,7 @@ const SignInPage = () => {
 
     const signInAccount = async () => {
         try {
-            console.log(`Email: ${signInEmail} Password: ${signInPassword}`);
+            // console.log(`Email: ${signInEmail} Password: ${signInPassword}`);
             await signInWithEmailAndPassword(auth, signInEmail, signInPassword);
             // dispatch(signIn(auth.currentUser));
             navigate("/")

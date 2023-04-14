@@ -19,7 +19,7 @@ const VideoResults = () => {
         const data = await fetch(YOUTUBE_SEARCHRESULT_API.replace("surfing", search_query.get("search_query")));
         const details = await data.json();
         // console.log(details);
-        console.log(details?.items);
+        // console.log(details?.items);
         setVideos(details?.items);
     }
 

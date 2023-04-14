@@ -49,7 +49,7 @@ const VideoCard = ({ channelTitle, thumbnails, title, viewCount, publishedAt, mi
   return (
       
           <div className='text-white mb-10 cursor-pointer'>
-          <img className={`rounded-2xl md:rounded-lg w-[92%] h-[190px] ${min ? "h-fit w-fit" : "md:h-[200px]"}`} src={thumbnails?.medium?.url} alt="thumbnails" />
+          <img className={`rounded-2xl md:rounded-lg w-[92%] h-[190px] ${min ? "h-fit w-fit" : "md:h-[165px] lg:h-[200px]"}`} src={thumbnails?.medium?.url} alt="thumbnails" />
           <div className='flex gap-4 mt-3'>
               <img className='h-10 w-10 rounded-full object-cover' src={thumbnails?.default?.url} alt="" />
               <div>
