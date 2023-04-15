@@ -14,6 +14,7 @@ import SignInPage from './components/SignInPage';
 import { Provider } from 'react-redux';
 import store from './utils/store';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import WatchLater from './components/WatchLater';
 
 const appRouter = createBrowserRouter([
   {
@@ -35,12 +36,28 @@ const appRouter = createBrowserRouter([
           {
             path: "",
             element: <Subscriptions />
-          }
+          },
+        ]
+      },
+      {
+        path: "watchlater",
+        element: <ProtectedRoutes />,
+        children: [
+          {
+            path: "",
+            element: <WatchLater />
+          },
         ]
       },
       {
         path: "history",
-        element: <WatchHistory />
+        element: <ProtectedRoutes />,
+        children: [
+          {
+            path: "",
+            element: <WatchHistory />
+          },
+        ]
       },
       {
         path: "results",

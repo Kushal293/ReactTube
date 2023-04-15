@@ -38,18 +38,18 @@ const Sidebar = () => {
     <div className='container container-dark md:w-1/5 lg:w-2/12 h-[calc(100vh-50px)] list-none bg-transparent text-white text-sm px-2 sticky top-[60px] hidden md:block'>
       <div className='flex flex-col px-3 py-3'>
         <Link to='/'><li onClick={() => handleClick("Home")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Home" ? "bg-[#222222]" : "bg-transparent"}`}><HomeIcon /> Home</li></Link>
-        <li onClick={() => handleClick("Shorts")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Shorts" ? "bg-[#222222]" : "bg-transparent"}`}><MovieFilterOutlinedIcon /> Shorts</li>
-        <Link to="subscriptions"><li onClick={() => handleClick("Subscriptions")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Subscriptions" ? "bg-[#222222]" : "bg-transparent"}`}><SubscriptionsOutlinedIcon /> Subscriptions</li></Link>
+        {/* <li onClick={() => handleClick("Shorts")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Shorts" ? "bg-[#222222]" : "bg-transparent"}`}><MovieFilterOutlinedIcon /> Shorts</li> */}
+        <Link to="/subscriptions"><li onClick={() => handleClick("Subscriptions")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Subscriptions" ? "bg-[#222222]" : "bg-transparent"}`}><SubscriptionsOutlinedIcon /> Subscriptions</li></Link>
       </div>
       <hr className='border-none h-[2px] bg-[#222222]' />
       <div className='flex flex-col px-3 py-3'>
         <li onClick={() => handleClick("Library")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Library" ? "bg-[#222222]" : "bg-transparent"}`}><VideoLibraryOutlinedIcon /> Library</li>
-        <Link to="history"><li onClick={() => handleClick("History")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "History" ? "bg-[#222222]" : "bg-transparent"}`}><HistoryOutlinedIcon /> History</li></Link>
-        <li onClick={() => handleClick("Watch later")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Watch later" ? "bg-[#222222]" : "bg-transparent"}`}><WatchLaterOutlinedIcon /> Watch later</li>
+        <Link to="/history"><li onClick={() => handleClick("History")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "History" ? "bg-[#222222]" : "bg-transparent"}`}><HistoryOutlinedIcon /> History</li></Link>
+        <Link to="/watchlater"><li onClick={() => handleClick("Watch later")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Watch later" ? "bg-[#222222]" : "bg-transparent"}`}><WatchLaterOutlinedIcon /> Watch later</li></Link>
         <li onClick={() => handleClick("Liked videos")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Liked videos" ? "bg-[#222222]" : "bg-transparent"}`}><ThumbUpOutlinedIcon /> Liked videos</li>
       </div>
       <hr className='border-none h-[2px] bg-[#222222]' />
-      <div className='flex flex-col gap-2 px-3 py-3'>
+      {/* <div className='flex flex-col gap-2 px-3 py-3'>
         <h1 className='ml-2'>Subscriptions</h1>
         <div className='flex flex-col'>
           <li onClick={() => handleClick("Akshay saini")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Akshay saini" ? "bg-[#222222]" : "bg-transparent"}`}><AccountCircleIcon /> Akshay saini</li>
@@ -60,7 +60,7 @@ const Sidebar = () => {
           <li onClick={() => handleClick("Pedro tech")} className={`flex gap-6 p-2 rounded-xl cursor-pointer hover:bg-[#222222] items-center ${activeBtn === "Pedro tech" ? "bg-[#222222]" : "bg-transparent"}`}><AccountCircleIcon /> Pedro tech</li>
         </div>
       </div>
-      <hr className='border-none h-[2px] bg-[#222222]' />
+      <hr className='border-none h-[2px] bg-[#222222]' /> */}
       <div className='flex flex-col gap-2 px-3 py-3'>
         <h1 className='ml-2'>Explore</h1>
         <div className='flex flex-col'>

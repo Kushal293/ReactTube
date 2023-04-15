@@ -14,6 +14,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { logOut, signIn } from '../utils/authSlice';
 import { signOut } from 'firebase/auth';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { suggestionsArray } from '../utils/helper';
 // import { getAuth } from 'firebase/auth';
 
 const Head = () => {
@@ -45,6 +47,10 @@ const Head = () => {
   //   }
   // }, [searchQuery]);
 
+  // useEffect(() => {
+  //   getSearchResult();
+  // }, [searchQuery])
+
   // const getSearchResult = async () => {
   //   // const data = await fetch(YOUTUBE_SEARCHRESULT_API);
   //   const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
@@ -55,6 +61,18 @@ const Head = () => {
   //     [ searchQuery ]: searchResult,
   //   }))
   // }
+  const getSearchResult = async () => {
+    // const data = await fetch(YOUTUBE_SEARCHRESULT_API);
+    const data = await fetch(YOUTUBE_SEARCH_API.replace("searchQuery", searchQuery));
+    console.log(data);
+    // const json = await suggestionsArray(data);
+    // console.log(data);
+    // console.log(json[ 1 ]);
+    // setSearchSuggestion(json[ 1 ]);
+    // dispatch(cachingSuggestion({
+    //   [ searchQuery ]: searchResult,
+    // }))
+  }
   const handleToggleMenu = () => {
     dispatch(toggleMenu());
   }
@@ -130,13 +148,19 @@ const Head = () => {
       <div className='flex items-center justify-center gap-1 md:gap-4'>
         <div className='hover:bg-[#222222] rounded-full p-1 md:p-2 cursor-pointer hidden md:flex items-center justify-center'><VideoCallOutlinedIcon className='text-white' /></div>
         <div className='hover:bg-[#222222] rounded-full p-1 md:p-2 cursor-pointer hidden md:flex items-center justify-center'><NotificationsNoneOutlinedIcon className='text-white' /></div>
-        <Link>
-        <div className='relative cursor-pointer ml-2 h-9 w-9 rounded-full flex items-center justify-center text-white text-lg bg-blue-500'>
-            <button title={ user?.email } onClick={() => setIsVisible(!isVisible)}><h1>{ user?.email?.charAt(0).toUpperCase() }</h1></button>
+        
+          { isAuth ? (
+            <div className='relative cursor-pointer ml-2 h-9 w-9 rounded-full flex items-center justify-center text-white text-lg bg-blue-500' onClick={() => setIsVisible(!isVisible)}>
+            <button title={ user?.email }><h1>{ user?.email?.charAt(0).toUpperCase() }</h1></button>
             <ul className={`absolute -bottom-14 w-40 right-1 bg-[#333333] p-3 rounded-lg ${isVisible ? "" : "hidden"}`}>
               <li className='text-base font-semibold text-gray-300' onClick={signout}>{isAuth ? "Sign Out" : "Sign In"}</li>
             </ul>
-        </div></Link>
+            </div>
+          ) :
+            (
+              <Link to='/signin'><AccountCircleIcon className='text-blue-600' style={{fontSize: "34px"}} /></Link>
+          )}
+  
           </div>
     </div>
   )

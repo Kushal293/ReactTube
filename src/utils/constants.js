@@ -13,8 +13,8 @@ export const YOUTUBE_RELATED_VIDEOS_API = "https://youtube.googleapis.com/youtub
 
 export const YOUTUBE_SEARCHRESULT_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=surfing&key=" + API_KEY;
 
-export const YOUTUBE_SEARCH_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
-
+// export const YOUTUBE_SEARCH_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+export const YOUTUBE_SEARCH_API = "https://clients1.google.com/complete/search?client=youtube&gs_ri=youtube&ds=yt&q=searchQuery";
 export const YOUTUBE_CHANNEL_INFO = "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=CHANNEL_ID&key=" + API_KEY;
 
 export const LIVE_MESSAGE_MAX_COUNT = 25;

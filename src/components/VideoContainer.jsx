@@ -51,7 +51,7 @@ const VideoContainer = () => {
           return <Link to={"/watch?v=" + video.id}  key={ video?.etag }><VideoCard { ...video?.snippet } { ...video?.statistics } min={!isMenuOpen} /></Link>
         }) }
       </div>
-      <MobileBar device="mobile" />
+      {/* <MobileBar device="mobile" /> */}
     </div>
   )
 }

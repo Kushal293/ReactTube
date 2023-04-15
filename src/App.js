@@ -4,17 +4,19 @@ import Body from './components/Body';
 import Head from './components/Head';
 import { auth } from './config/firebase';
 import { logOut, signIn } from './utils/authSlice';
-import { onAuthStateChanged } from 'firebase/auth';
-
+import { onAuthStateChanged } from 'firebase/auth'; 
+import { useNavigate } from 'react-router-dom';
 
 
 function App () {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   onAuthStateChanged(auth, (currentUser) => {
     if (currentUser) {
       const { email, uid } = currentUser;
-        dispatch(signIn({email, uid}));
+      dispatch(signIn({ email, uid }));
+      // navigate(-1)
     }
     else {
         dispatch(logOut());
