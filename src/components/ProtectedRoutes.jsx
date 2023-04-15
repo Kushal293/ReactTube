@@ -9,7 +9,7 @@ const ProtectedRoutes = ({ path, element }) => {
   return isAuth ? (
     <Outlet />
   ) : (
-    <Navigate to='/' state= {{from : location }} replace />  
+    <Navigate to='/signin' state= {{from : location }} replace />  
   );
 }
 // const ProtectedRoutes = () => {
